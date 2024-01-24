@@ -1,5 +1,5 @@
 # healthcare-records
-Automatic Synchronization of relevant healthcare documents from a patient's Primary Healthcare Provider into External CRUD Platform APIs
+Automatic Synchronization of relevant healthcare documents from a patient's Primary Healthcare Provider into External CRUD Platform APIs ( Carepatron for example in this case )
 
 System Design:
 
@@ -50,6 +50,54 @@ Relationships:
 - One Patient can have many Healthcare Documents.
 - One Healthcare Document belongs to one Patient and has one source (User or Primary Healthcare Provider).
 - One Synchronization Log entry is associated with one Patient and might reference a specific Healthcare Document.
+
+
+We then a the tables in Platform Database using this queries ( This will be a seed for the microservice ):
+
+```
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) UNIQUE,
+  name VARCHAR(255),
+  type VARCHAR(255),
+  carepatron_id INT
+);
+
+CREATE TABLE patients (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  contact_details TEXT,
+  medical_history TEXT,
+  dietary_preferences TEXT,
+  carepatron_patient_id INT,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE healthcare_documents (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  patient_id INT,
+  type VARCHAR(255),
+  date DATE,
+  content TEXT,
+  source VARCHAR(255),
+  FOREIGN KEY (patient_id) REFERENCES patients(id)
+);
+
+CREATE TABLE synchronization_log (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  patient_id INT,
+  document_id INT,
+  action VARCHAR(255),
+  timestamp DATETIME,
+  status VARCHAR(255),
+  details TEXT,
+  FOREIGN KEY (patient_id) REFERENCES patients(id),
+  FOREIGN KEY (document_id) REFERENCES healthcare_documents(id)
+);
+```
+
 
 
 
