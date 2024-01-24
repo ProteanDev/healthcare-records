@@ -119,7 +119,7 @@ Authentication: Implement appropriate authentication and authorization mechanism
 - POST /patients: Create a new patient (restricted to Dieticians)
 - PUT /patients/{id}: Update an existing patient (restricted to Dieticians who created the patient)
 - DELETE /patients/{id}: Delete a patient (restricted to Dieticians who created the patient)
-- 
+
 3. Healthcare Document Endpoints:
 
 - GET /patients/{patient_id}/documents: Retrieve all healthcare documents for a specific patient
