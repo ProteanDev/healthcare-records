@@ -140,7 +140,7 @@ Additional Endpoints:
 - GET /patients/{patient_id}/shared-documents: View shared healthcare documents with other practitioners (restricted to authorized practitioners)
 - POST /documents/{id}/share: Share a specific healthcare document with another practitioner (restricted to the document source)
 
-Non-visual ERD ( to save us time ) This is how the interactions will proceed based on the data.
+## Non-visual ERD ( to save us time ) This is how the interactions will proceed based on the data.
 
 Entities:
 
@@ -162,7 +162,7 @@ Additional Notes:
 
 - The ERD does not show all attributes of each entity for simplicity.
 
-## Estimated Mandays for User Stories
+## Estimated Mandays for User Stories ( Delivery Plan )
 
 Please note: These are just estimates and the actual time may vary depending on several factors like developer experience, complexity of integrations, and chosen technologies.
 
@@ -185,6 +185,26 @@ User Story, Estimated Mandays &	Notes
 - Request additional documents from Primary Healthcare Provider:	2-3 Mandays	Design and implementation of a communication channel within Carepatron.
 
 Total estimated mandays: 30-40 Mandays
+
+Week 1:
+
+- Setup Carepatron API and data models.
+- Implement patient record CRUD operations.
+
+Week 2:
+
+- Implement background job processing for document synchronization.
+- Design and implement Document Integration Service.
+
+Week 3:
+
+- Integrate with a mock PHP system for testing.
+- Implement document storage and retrieval.
+
+Week 4:
+
+- Conduct end-to-end testing.
+- Optimize for performance and scalability.
 
 Additional factors to consider:
 
