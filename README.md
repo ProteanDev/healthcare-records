@@ -140,5 +140,27 @@ Additional Endpoints:
 - GET /patients/{patient_id}/shared-documents: View shared healthcare documents with other practitioners (restricted to authorized practitioners)
 - POST /documents/{id}/share: Share a specific healthcare document with another practitioner (restricted to the document source)
 
+Non-visual ERD ( to save us time ) This is the interaction will go based on the data.
+
+Entities:
+
+- User: Represents a user of the system, including Dieticians and Patients.
+- Patient: Represents a patient under the care of a Dietician.
+- Healthcare Document: Represents a healthcare document associated with a patient, such as lab reports, progress notes, and physical assessments.
+- Synchronization Log: Records information about synchronization events for patient healthcare documents.
+
+Relationships:
+
+- One User can have many Patients (as a Dietician).
+- One Patient belongs to one User (Dietician).
+- One Patient can have many Healthcare Documents.
+- One Healthcare Document belongs to one Patient.
+- One Healthcare Document has one source (User or Primary Healthcare Provider).
+- One Synchronization Log entry is associated with one Patient and might reference a specific Healthcare Document.
+
+Additional Notes:
+
+- The ERD does not show all attributes of each entity for simplicity.
+
 
 
