@@ -306,5 +306,7 @@ Additional Considerations:
 - User acceptance testing (UAT): Involve Dieticians and Patients in testing to validate usability and overall satisfaction.
 
 
-These Design Document is specifically made for Carepatron's Lead Developer Exercise, but can also be used for a different platform.
+
+
+This Design Document is specifically made for Carepatron's Lead Developer Exercise, but can also be used for a different platform.
 But if you wish for me to execute these, for your company's healthcare platform, you're gonna have to give me a team to work with.
