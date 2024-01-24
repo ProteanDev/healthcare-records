@@ -140,7 +140,7 @@ Additional Endpoints:
 - GET /patients/{patient_id}/shared-documents: View shared healthcare documents with other practitioners (restricted to authorized practitioners)
 - POST /documents/{id}/share: Share a specific healthcare document with another practitioner (restricted to the document source)
 
-Non-visual ERD ( to save us time ) This is the interaction will go based on the data.
+Non-visual ERD ( to save us time ) This is how the interactions will proceed based on the data.
 
 Entities:
 
@@ -161,6 +161,36 @@ Relationships:
 Additional Notes:
 
 - The ERD does not show all attributes of each entity for simplicity.
+
+Estimated Mandays for User Stories
+
+Please note: These are just estimates and the actual time may vary depending on several factors like developer experience, complexity of integrations, and chosen technologies.
+
+User Story, Estimated Mandays &	Notes
+
+- Receive email notification for new patient inquiries:	1-2 Mandays	Relatively straightforward integration with email API.
+- Create new patient record in Carepatron:	2-3 Mandays	Requires API integration with Carepatron and data mapping.
+- Add additional patient information:	1-2 Mandays	Depends on complexity of the information and UI design.
+- View summary of synced healthcare documents:	2-3 Mandays	Requires integration with patient's Primary Healthcare Provider API and data parsing.
+- See detailed list of synced healthcare documents:	2-3 Mandays	Similar complexity to the previous story.
+- Manually trigger document synchronization:	1-2 Mandays	Depends on implementation details and UI design.
+- Get notified of synchronization errors:	1-2 Mandays	Requires error handling and notification logic.
+- Update patient record and reflect in documents:	3-4 Mandays	Needs two-way data synchronization with Carepatron and potentially the Primary Healthcare Provider.
+- Automatic document updates from Primary Healthcare Provider:	3-4 Mandays	Complex integration and data handling, potentially requiring background processes.
+- History log/timeline of synchronization events:	2-3 Mandays	Database design and UI implementation for displaying the log.
+- Filter and search healthcare documents:	3-4 Mandays	Requires advanced search functionality and data filtering logic.
+- User-friendly presentation of healthcare documents:	2-3 Mandays	Focus on UI design and data visualization for clarity.
+- Secure document sharing with other practitioners:	2-3 Mandays	Requires secure data access controls and user management within Carepatron.
+- Fast and efficient document synchronization:	2-3 Mandays	Optimization of API calls and data transfer processes.
+- Request additional documents from Primary Healthcare Provider:	2-3 Mandays	Design and implementation of a communication channel within Carepatron.
+
+Total estimated mandays: 30-40 Mandays
+
+Additional factors to consider:
+
+- API availability and documentation: Well-documented and easily accessible APIs can significantly reduce development time.
+- Security requirements: Implementing robust security measures might add additional complexity and time.
+- Testing and bug fixing: Allocate sufficient time for thorough testing and addressing any issues that arise.
 
 
 
