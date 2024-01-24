@@ -5,7 +5,7 @@ System Design:
 
 ![Healthcare Records Simplified System Design](https://github.com/ProteanDev/healthcare-records/assets/6328775/9768d007-20a3-46d9-8b90-4f85b761c5be)
 
-Data Models:
+## Data Models:
 
 1. User Model:
 
@@ -98,7 +98,7 @@ CREATE TABLE synchronization_log (
 );
 ```
 
-CRUD REST Endpoints for the said Data Models:
+## CRUD REST Endpoints for the said Data Models:
 
 Base URL: /api/v1
 
@@ -162,7 +162,7 @@ Additional Notes:
 
 - The ERD does not show all attributes of each entity for simplicity.
 
-Estimated Mandays for User Stories
+## Estimated Mandays for User Stories
 
 Please note: These are just estimates and the actual time may vary depending on several factors like developer experience, complexity of integrations, and chosen technologies.
 
@@ -192,7 +192,7 @@ Additional factors to consider:
 - Security requirements: Implementing robust security measures might add additional complexity and time.
 - Testing and bug fixing: Allocate sufficient time for thorough testing and addressing any issues that arise.
 
-UI/UX Components:
+## UI/UX Components:
 
 General Components:
 
@@ -238,7 +238,7 @@ Considerations:
 - User Experience: Prioritize intuitive navigation, clear labels, and helpful feedback mechanisms.
 - Security: Implement proper authentication and authorization controls to protect sensitive data.
 
-Test Plan for the Microcservice.
+## Test Plan for the Microcservice.
 
 Here's a roadmap for developing a comprehensive test plan for this system:
 
