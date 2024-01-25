@@ -30,11 +30,11 @@ Start: A prospective patient contacts the Dietician through email.
 
 - System automatically triggers a synchronization process with the patient's Primary Healthcare Provider.
 - While syncing:
--- Show a loading indicator.
--- Optionally, display a progress bar.
+  - Show a loading indicator.
+  - Optionally, display a progress bar.
 - Upon successful sync:
--- Display a summary of the synced documents (lab results, progress notes, physical assessments).
--- Provide links to view the full documents.
+  - Display a summary of the synced documents (lab results, progress notes, physical assessments).
+  - Provide links to view the full documents.
 - Indicate the source (Primary Healthcare Provider) of each document.
 
 4. Accessing and Managing Documents:
@@ -50,8 +50,8 @@ Start: A prospective patient contacts the Dietician through email.
 - Dietician can edit patient information in Carepatron.
 - Edits automatically trigger an update request to the Primary Healthcare Provider.
 - Upon successful update:
--- Synced documents reflect the latest changes.
--- Dietician receives a notification.
+  - Synced documents reflect the latest changes.
+  - Dietician receives a notification.
 - If update fails, the Dietician receives a notification with options to retry or contact support.
 
 6. Automatic Document Updates and Tracking:
