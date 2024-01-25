@@ -5,7 +5,7 @@ Automatic Synchronization of relevant healthcare documents from a patient's Prim
 
 ![Healthcare Records Simplified System Design](https://github.com/ProteanDev/healthcare-records/assets/6328775/9768d007-20a3-46d9-8b90-4f85b761c5be)
 
-## Process Diagram for Dietician Patient Onboarding and Document Management ( Microservice ) in Carepatron
+## Process Diagram for Dietician Patient Onboarding and Document Management ( Microservice ) in Platform ( Carepatron )
 
 ![Process Flow Page 1](https://github.com/ProteanDev/healthcare-records/assets/6328775/5660b32b-48da-4500-adb3-2a8c23f3a67e)
 
