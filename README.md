@@ -1,9 +1,77 @@
 # healthcare-records
 Automatic Synchronization of relevant healthcare documents from a patient's Primary Healthcare Provider into External CRUD Platform APIs ( Carepatron for example in this case )
 
-System Design:
+## System Design:
 
 ![Healthcare Records Simplified System Design](https://github.com/ProteanDev/healthcare-records/assets/6328775/9768d007-20a3-46d9-8b90-4f85b761c5be)
+
+## Process Diagram for Dietician Patient Onboarding and Document Management ( Microservice ) in Carepatron
+
+![Process Flow Page 1](https://github.com/ProteanDev/healthcare-records/assets/6328775/5660b32b-48da-4500-adb3-2a8c23f3a67e)
+
+![Process Flow Page 2](https://github.com/ProteanDev/healthcare-records/assets/6328775/db644ac7-8082-478e-953f-ac761fc16852)
+
+Start: A prospective patient contacts the Dietician through email.
+
+1. New Patient Inquiry:
+
+- System automatically sends an email notification to the Dietician.
+- Dietician clicks on the link in the email to open the patient record creation page.
+
+2. Patient Record Creation:
+
+- Dietician enters the patient's name and email address.
+- System searches for existing patient records based on the information.
+-- If a match exists, redirect to the existing record and display a warning.
+-- If no match exists, proceed to create a new record.
+- Dietician fills in additional information such as contact details, medical history, and dietary preferences.
+
+3. Healthcare Document Sync:
+
+- System automatically triggers a synchronization process with the patient's Primary Healthcare Provider.
+- While syncing:
+-- Show a loading indicator.
+-- Optionally, display a progress bar.
+- Upon successful sync:
+-- Display a summary of the synced documents (lab results, progress notes, physical assessments).
+-- Provide links to view the full documents.
+- Indicate the source (Primary Healthcare Provider) of each document.
+
+4. Accessing and Managing Documents:
+
+- Dietician can view a detailed list of all synced documents for the patient, categorized by type.
+- Each document has metadata like date, author, and source.
+- Documents can be downloaded for reference or sharing.
+- Dietician can manually trigger a synchronization process to refresh document information.
+- System notifies the Dietician of any synchronization errors or issues with troubleshooting steps.
+
+5. Updating Patient Information and Documents:
+
+- Dietician can edit patient information in Carepatron.
+- Edits automatically trigger an update request to the Primary Healthcare Provider.
+- Upon successful update:
+-- Synced documents reflect the latest changes.
+-- Dietician receives a notification.
+- If update fails, the Dietician receives a notification with options to retry or contact support.
+
+6. Automatic Document Updates and Tracking:
+
+- System automatically updates Carepatron documents when changes are made by the Primary Healthcare Provider.
+- Dietician receives a notification highlighting significant changes or updates.
+- A history log displays all document synchronization events with timestamps, details, and status.
+- Dietician can filter and search the log by various criteria.
+
+7. Additional Features:
+
+- Dietician can filter and search for specific documents based on date, type, or keyword.
+- Healthcare documents are presented in a user-friendly format for easy interpretation and analysis.
+- Dietician can securely share relevant documents with other healthcare practitioners within Carepatron.
+- The system prioritizes fast and efficient document synchronization.
+- Dietician can request additional documents or information from the Primary Healthcare Provider through Carepatron.
+
+End: Dietician has access to the patient's complete healthcare information for informed decision-making and collaborative care.
+
+Note: This is a high-level overview, and the specific details and interactions within each step might vary depending on technical implementation and user interface design.
 
 ## Data Models:
 
@@ -168,21 +236,21 @@ Please note: These are just estimates and the actual time may vary depending on 
 
 User Story, Estimated Mandays &	Notes
 
-- Receive email notification for new patient inquiries:	1-2 Mandays	Relatively straightforward integration with email API.
-- Create new patient record in Carepatron:	2-3 Mandays	Requires API integration with Carepatron and data mapping.
-- Add additional patient information:	1-2 Mandays	Depends on complexity of the information and UI design.
-- View summary of synced healthcare documents:	2-3 Mandays	Requires integration with patient's Primary Healthcare Provider API and data parsing.
-- See detailed list of synced healthcare documents:	2-3 Mandays	Similar complexity to the previous story.
-- Manually trigger document synchronization:	1-2 Mandays	Depends on implementation details and UI design.
-- Get notified of synchronization errors:	1-2 Mandays	Requires error handling and notification logic.
-- Update patient record and reflect in documents:	3-4 Mandays	Needs two-way data synchronization with Carepatron and potentially the Primary Healthcare Provider.
-- Automatic document updates from Primary Healthcare Provider:	3-4 Mandays	Complex integration and data handling, potentially requiring background processes.
-- History log/timeline of synchronization events:	2-3 Mandays	Database design and UI implementation for displaying the log.
-- Filter and search healthcare documents:	3-4 Mandays	Requires advanced search functionality and data filtering logic.
-- User-friendly presentation of healthcare documents:	2-3 Mandays	Focus on UI design and data visualization for clarity.
-- Secure document sharing with other practitioners:	2-3 Mandays	Requires secure data access controls and user management within Carepatron.
-- Fast and efficient document synchronization:	2-3 Mandays	Optimization of API calls and data transfer processes.
-- Request additional documents from Primary Healthcare Provider:	2-3 Mandays	Design and implementation of a communication channel within Carepatron.
+1. Receive email notification for new patient inquiries:	1-2 Mandays	Relatively straightforward integration with email API.
+2. Create new patient record in Carepatron:	2-3 Mandays	Requires API integration with Carepatron and data mapping.
+3. Add additional patient information:	1-2 Mandays	Depends on complexity of the information and UI design.
+4. View summary of synced healthcare documents:	2-3 Mandays	Requires integration with patient's Primary Healthcare Provider API and data parsing.
+5. See detailed list of synced healthcare documents:	2-3 Mandays	Similar complexity to the previous story.
+6. Manually trigger document synchronization:	1-2 Mandays	Depends on implementation details and UI design.
+7. Get notified of synchronization errors:	1-2 Mandays	Requires error handling and notification logic.
+8. Update patient record and reflect in documents:	3-4 Mandays	Needs two-way data synchronization with Carepatron and potentially the Primary Healthcare Provider.
+9. Automatic document updates from Primary Healthcare Provider:	3-4 Mandays	Complex integration and data handling, potentially requiring background processes.
+10. History log/timeline of synchronization events:	2-3 Mandays	Database design and UI implementation for displaying the log.
+11. Filter and search healthcare documents:	3-4 Mandays	Requires advanced search functionality and data filtering logic.
+12. User-friendly presentation of healthcare documents:	2-3 Mandays	Focus on UI design and data visualization for clarity.
+13. Secure document sharing with other practitioners:	2-3 Mandays	Requires secure data access controls and user management within Carepatron.
+14. Fast and efficient document synchronization:	2-3 Mandays	Optimization of API calls and data transfer processes.
+15. Request additional documents from Primary Healthcare Provider:	2-3 Mandays	Design and implementation of a communication channel within Carepatron.
 
 Total estimated mandays: 30-40 Mandays
 
