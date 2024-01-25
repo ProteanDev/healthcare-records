@@ -22,8 +22,8 @@ Start: A prospective patient contacts the Dietician through email.
 
 - Dietician enters the patient's name and email address.
 - System searches for existing patient records based on the information.
--- If a match exists, redirect to the existing record and display a warning.
--- If no match exists, proceed to create a new record.
+  - If a match exists, redirect to the existing record and display a warning.
+  - If no match exists, proceed to create a new record.
 - Dietician fills in additional information such as contact details, medical history, and dietary preferences.
 
 3. Healthcare Document Sync:
